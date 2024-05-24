@@ -129,6 +129,13 @@ nav .fa{
 
 
 /* info-boxes */
+
+
+
+
+
+
+/* Base styles for the info-boxes */
 .info-boxes {
     display: flex;
     justify-content: center;
@@ -140,9 +147,7 @@ nav .fa{
 }
 
 .info-boxes .box {
-    /* background-color: #fff; */
     border: 1px solid #ddd;
-    /* border-radius: 10px; */
     width: 25%;
     padding: 20px;
     text-align: center;
@@ -154,7 +159,6 @@ nav .fa{
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background-color: red;
-    
 }
 
 .info-boxes .box h3 {
@@ -173,17 +177,114 @@ nav .fa{
     background-color: black;
     color: white;
 }
+
 .info-boxes .box i {
     font-size: 24px; /* Adjust the size of the icons */
     margin-bottom: 10px; /* Add space between the icon and the heading */
     display: block; /* Ensure the icon appears on its own line */
 }
-/* @media (max-width: 317px) {
-    .info-boxes{
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .info-boxes .box {
+        width: 30%;
+        padding: 15px;
+    }
+
+    .info-boxes .box h3 {
+        font-size: 18px;
+    }
+
+    .info-boxes .box i {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 992px) {
+    .info-boxes .box {
+        width: 45%;
+        padding: 15px;
+    }
+
+    .info-boxes .box h3 {
+        font-size: 16px;
+    }
+
+    .info-boxes .box i {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .info-boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-boxes .box {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .info-boxes .box h3 {
+        font-size: 18px;
+    }
+
+    .info-boxes .box i {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .info-boxes {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-boxes .box {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    .info-boxes .box h3 {
+        font-size: 16px;
+    }
+
+    .info-boxes .box i {
+        font-size: 20px;
+    }
+
+    .info-boxes .box p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    .info-boxes {
         flex-direction: column;
         text-align: left;
     }
-} */
+
+    .info-boxes .box {
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .info-boxes .box h3 {
+        font-size: 14px;
+    }
+
+    .info-boxes .box i {
+        font-size: 18px;
+    }
+
+    .info-boxes .box p {
+        font-size: 12px;
+    }
+}
+
 
 
 
