@@ -982,6 +982,7 @@ main {
 
 
 /* FormREA */
+/* Base styles for container1 */
 .container1 {
     max-width: 1200px;
     width: 100%;
@@ -990,11 +991,14 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
 .header5 {
     max-width: 600px;
     margin-left: 100px;
+    flex: 1;
+    padding: 20px;
 }
 
 .header5 h1 {
@@ -1019,6 +1023,8 @@ main {
 .form-container {
     max-width: 500px;
     width: 100%;
+    flex: 1;
+    padding: 20px;
 }
 
 form {
@@ -1056,6 +1062,7 @@ textarea {
 .form-row {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
 .form-row > div {
@@ -1066,15 +1073,34 @@ textarea {
 .form-row > div:last-child {
     margin-right: 0;
 }
-@media (max-width: 768px) {
+
+/* Media query for large devices (desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .header5 {
+        margin-left: 50px;
+        padding: 15px;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+}
+
+/* Media query for medium devices (tablets, 992px and up) */
+@media (max-width: 992px) {
     .container1 {
         flex-direction: column;
         align-items: center;
     }
 
+    .header5 {
+        margin-left: 0;
+        padding: 10px;
+    }
+
     .form-container {
         margin-top: 20px;
-        flex-direction: column;
+        padding: 10px;
     }
 
     .form-row {
@@ -1091,7 +1117,12 @@ textarea {
     }
 }
 
-@media (max-width: 480px) {
+/* Media query for small devices (phones, 768px and up) */
+@media (max-width: 768px) {
+    .container1 {
+        padding: 10px;
+    }
+
     .header5 h1 {
         font-size: 36px;
     }
@@ -1109,6 +1140,47 @@ textarea {
         font-size: 14px;
     }
 }
+
+/* Media query for extra small devices (small phones, 480px and up) */
+@media (max-width: 480px) {
+    .header5 h1 {
+        font-size: 28px;
+    }
+
+    .header5 h2 {
+        font-size: 20px;
+    }
+
+    .header5 p {
+        font-size: 12px;
+    }
+
+    .submit-btn {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* Media query for very small devices (320px and down) */
+@media (max-width: 320px) {
+    .header5 h1 {
+        font-size: 24px;
+    }
+
+    .header5 h2 {
+        font-size: 18px;
+    }
+
+    .header5 p {
+        font-size: 10px;
+    }
+
+    .submit-btn {
+        padding: 6px;
+        font-size: 10px;
+    }
+}
+
 
 
 /* Footersection */
