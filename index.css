@@ -1190,6 +1190,7 @@ textarea {
     justify-content: space-between;
     padding: 40px 60px;
     background-color: #1a1a1a;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
 .footer-column {
@@ -1197,11 +1198,12 @@ textarea {
     flex-direction: column;
     justify-content: space-between;
     width: 48%;
+    margin: 10px 0;
 }
 
-.footer-column h2, .footer-column p,  .footer-column form {
+.footer-column h2, .footer-column p, form1 {
     margin: 20px 0;
-    color:white;
+    color: white;
     margin-left: 50px;
 }
 
@@ -1248,41 +1250,60 @@ nav a.active::after {
 
 form1 {
     display: flex;
+    flex-direction: column; /* Change to column layout */
     align-items: center;
+    margin-left: 50px;
 }
 
 form1 input[type="email"] {
     padding: 10px;
     border: none;
     border-radius: 4px;
-    margin-left: 40px;
-    width: 250px;
+    margin-bottom: 10px; /* Add margin-bottom */
+    width: 100%; /* Ensure it takes full width */
 }
 
 form1 button {
-    margin-top: -20px;
     padding: 10px 20px;
     background-color: #ff4d4d;
     color: white;
     border: none;
-    margin-left: 40px;
+    border-radius: 4px;
     cursor: pointer;
+    width: auto; /* Adjust width */
 }
 
 form1 button:hover {
     background-color: #e60000;
 }
 
+/* Media query for medium devices (tablets, 992px and up) */
+@media (max-width: 992px) {
+    .footer-column h2, .footer-column p, form1 {
+        margin-left: 30px;
+    }
+
+    form1 input[type="email"], form1 button {
+        margin-left: 0;
+    }
+}
+
+/* Media query for tablets and small screens (768px and up) */
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
         align-items: center;
+        padding: 20px;
     }
 
     .footer-column {
         width: 100%;
         text-align: center;
-        margin: 10px 0;
+        margin: 20px 0;
+    }
+
+    .footer-column h2, .footer-column p, form1 {
+        margin-left: 0;
     }
 
     nav {
@@ -1293,168 +1314,71 @@ form1 button:hover {
         margin: 5px 0;
     }
 
-    form {
-        flex-direction: column;
-    }
-
-    form input[type="email"] {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
-
-/* .footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 60px;
-    background-color: #1a1a1a;
-}
-
-.footer-left {
-    max-width: 500px;
-    margin-left: 100px;
-}
-
-.footer-left h2 {
-    font-size: 24px;
-    color: #fff;
-}
-
-.footer-left p {
-    margin: 10px 0;
-}
-
-.footer-left .contact-info {
-    margin: 10px 0;
-}
-
-.footer-left .social-icons {
-    margin-top: 20px;
-}
-
-.footer-left .social-icons a {
-    color: red;
-    margin-right: 10px;
-    font-size: 20px;
-    text-decoration: none;
-}
-
-.footer-center {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-center nav1 {
-    display: flex;
-    justify-content: center;
-}
-
-.footer-center nav1 a {
-    color: #fff;
-    margin: 0 15px;
-    font-size: 16px;
-    text-decoration: none;
-    position: relative;
-}
-
-.footer-center nav1 a:hover,
-.footer-center nav a.active {
-    color: #ff4d4d;
-}
-
-.footer-center nav1 a.active::after {
-    content: '';
-    display: block;
-    width: 50%;
-    height: 2px;
-    background-color: #ff4d4d;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.footer-center .newsletter {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.footer-center .newsletter form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-center .newsletter input[type="email"] {
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 10px;
-    width: 250px;
-}
-
-.footer-center .newsletter button {
-    padding: 10px 20px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.footer-center .newsletter button:hover {
-    background-color: #e60000;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #1a1a1a;
-    font-size: 14px;
-    color: #aaa;
-}
-
-@media (max-width: 768px) {
-    .footer {
+    form1 {
         flex-direction: column;
         align-items: center;
     }
 
-    .footer-left, .footer-center {
-        max-width: 100%;
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .footer-center nav {
-        flex-direction: column;
-    }
-
-    .footer-center nav a {
-        margin: 5px 0;
-    }
-
-    .footer-center .newsletter form {
-        flex-direction: column;
-    }
-
-    .footer-center .newsletter input[type="email"] {
-        width: 100%;
+    form1 input[type="email"] {
+        width: 90%;
         margin-bottom: 10px;
+    }
+
+    form1 button {
+        width: 90%;
     }
 }
 
+/* Media query for small devices (phones, 480px and up) */
+@media (max-width: 480px) {
+    .footer-column h2 {
+        font-size: 24px;
+    }
 
+    .footer-column p {
+        font-size: 14px;
+    }
 
+    nav a {
+        font-size: 14px;
+    }
 
+    form1 input[type="email"] {
+        width: 90%;
+        padding: 8px;
+        margin-left: 0;
+    }
 
+    form1 button {
+        padding: 10px;
+        font-size: 14px;
+        width: 90%;
+        margin-left: 0;
+    }
+}
 
+/* Media query for very small devices (320px and down) */
+@media (max-width: 320px) {
+    .footer-column h2 {
+        font-size: 20px;
+    }
 
+    .footer-column p {
+        font-size: 12px;
+    }
 
+    nav a {
+        font-size: 12px;
+    }
 
+    form1 input[type="email"] {
+        width: 100%;
+        padding: 6px;
+    }
 
-
- 
- */
+    form1 button {
+        padding: 8px;
+        font-size: 12px;
+        width: 100%;
+    }
+}
